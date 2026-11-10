@@ -1,5 +1,5 @@
 // Essay lab: întrebări Writing Task 2, indicii, verificare ortografică, bibliotecă. Încărcat înaintea app.js.
-const TOPICS = { art: "Art", environment: "Environment", education: "Education", culture: "Culture & tourism", crime: "Crime", character: "Character", books: "Books", business: "Business & money", health: "Health & exercise", food: "Food", family: "Family" };
+const TOPICS = { art: "Art", environment: "Environment", education: "Education", culture: "Culture & tourism", crime: "Crime", character: "Character", books: "Books", business: "Business & money", health: "Health & exercise", food: "Food", family: "Family", world: "World & social issues", transport: "Transport", technology: "Technology", media: "Media & internet", language: "Language & communication", work: "Work" };
 const SKEL = {
     "Opinion": ["Intro: paraphrase the question. This essay agrees / disagrees that … because … and … .", "Body 1: The primary reason is that … This is because … As a result, … For example, …", "Body 2: Another important point is that … That is to say, … For instance, …", "Conclusion: In conclusion, this essay agrees / disagrees that … because … and … ."],
     "Discussion": ["Intro: Some people believe that …, while others argue that … This essay agrees with the former / latter view because … .", "Body 1: On the one hand, … This is because … For example, … However, I believe … .", "Body 2: On the other hand, … That is to say, … For instance, … .", "Conclusion: In conclusion, although …, this essay believes that … because … ."],
@@ -77,7 +77,7 @@ function usefulWords(q) {
 }
 function hintsHtml() {
     const q = S.eq, L = S.hl, h = [];
-    if (L >= 1) h.push(["Ideas (RO)", q.args]);
+    if (L >= 1) h.push(["Arguments you could develop", q.ideas]);
     if (L >= 2) h.push(["Examples you can use", q.ex]);
     if (L >= 3) h.push(["Structure", SKEL[q.type]]);
     if (L >= 4) h.push(["Useful words", [usefulWords(q).join(", ")]]);
@@ -108,7 +108,7 @@ function renderRes() {
 }
 function modelHtml(q) {
     return `<div class="card model"><p class="eye">MODEL ESSAY · ${q.type.toUpperCase()}</p><h3>${esc(q.q)}</h3>${q.essay.map((p) => `<p>${esc(p)}</p>`).join("")}
-  <div class="hint"><b>Ideas</b><ul>${q.args.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div><div class="hint"><b>Examples</b><ul>${q.ex.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div></div>`;
+  <div class="hint"><b>Ideas</b><ul>${q.ideas.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div><div class="hint"><b>Examples</b><ul>${q.ex.map((x) => `<li>${esc(x)}</li>`).join("")}</ul></div></div>`;
 }
 function readPage() {
     return `<div class="wrap resp"><p class="eye">${TOPICS[S.eq.topic].toUpperCase()}</p>${modelHtml(S.eq)}<div class="row"><button class="btn pri" data-act="writeq" data-q="${S.eq.id}">Write this essay myself</button><button class="btn" data-act="exit">Back to essays</button></div></div>`;

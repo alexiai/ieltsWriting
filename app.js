@@ -31,7 +31,7 @@ const CATS = {
     ie: Wd("EI / IE", "receive, believe"), ending: Wd("Tricky endings", "-tion, -ous, -ance, -ible"),
     environment: Wd("Environment", "Nature & wildlife"), culture: Wd("Culture", "Tourism & languages"), crime: Wd("Crime", "Punishment & justice"),
     character: Wd("Character", "People & generations"), books: Wd("Books", "Reading & libraries"), business: Wd("Business", "Money & work"),
-    art: Wd("Art", "Museums & creativity"), education: Wd("Education", "Schools & learning"), health: Wd("Health", "Exercise & medicine"), food: Wd("Food", "Diet & cooking"), family: Wd("Family", "Parents & generations"), task1: Wd("Task 1", "Charts, maps & trends"),
+    art: Wd("Art", "Museums & creativity"), education: Wd("Education", "Schools & learning"), health: Wd("Health", "Exercise & medicine"), food: Wd("Food", "Diet & cooking"), family: Wd("Family", "Parents & generations"), world: Wd("World issues", "Society & global problems"), transport: Wd("Transport", "Cities, cars & travel"), technology: Wd("Technology", "Gadgets, AI & robots"), media: Wd("Media", "News, social media & the internet"), language: Wd("Language", "Communication & learning"), work: Wd("Work", "Careers & workplace"), task1: Wd("Task 1", "Charts, maps & trends"),
 };
 const FOCUS = ["names", "phone", "email", "address", "core", "double", "th", "silent"];
 const SILENT = /kn|wr|gh|mb$|^ps|^gn|ign|stle|^hon|ould|alk|sc[ie]|mn$/;
